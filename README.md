@@ -4,7 +4,7 @@ We present Cat-like Animals Facial Model (CAFM) -- a 3D Morphable Model (3DMM) c
 
 The constructed cat-like animal face dataset is released at [Google Drive](https://drive.google.com/drive/folders/1Ar_Wi6QpXxixJiIw_Qju5OWJStAb4TCv?usp=sharing) containing pairs of 2D face images with 15 landmarks and 3D face meshes with projection parameters. 
 DATA you have downloaded includes:
-- Foler `imgs`: 1706 images of cat (we will released the rest images later);
+- Folder `imgs/`: 1706 images of cat (we will released the rest images later);
 - `CAT_00.csv`: contains the 15 landmarks of each images;
 - `transformed_Shape.npy`: the 3D meshes of cat images(transformed);
 - `Angles.npy`: the Rotation angles;
@@ -18,17 +18,18 @@ FILE Introduction:
 - `shapeEV.npy`: is the standard deviation;
 - `mesh.npy`: is the face of mesh.
 
+## CAFM:
 If you wanna generate a specific 3D mesh,
 
 ```python
 import numpy as np
 
- meanFace = np.load("meanFace.npy")
+meanFace = np.load("meanFace.npy")
 s_i = np.load("PCA.npy")
 triangles = np.load('mesh.npy')
 
 sp = np.zeros((49, 1), dtype=np.float32)
-S = meanFace.T + np.dot(s_i.T, sp)
+S = meanFace.T + np.dot(s_i.T, sp) # you can set for yourself.
 ```
 
 ## Matching the Morphable Model to Images
@@ -38,4 +39,4 @@ In terminal:
 
 >`>`python matching_algorithm.py
 
-Your generated 3D mesh will be saved in a folder called "YOU CREATED", named "Transformed _Shape.npy".
+Generated 3D mesh will be saved in a folder called "YOU CREATED", named "Transformed _Shape.npy".

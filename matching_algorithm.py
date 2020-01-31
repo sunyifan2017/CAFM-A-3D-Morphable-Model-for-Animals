@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 from utils import *
 from config import FLAGS
 
-sys.path.append("../face3d")
+#sys.path.append("../face3d")
 import face3d
 from face3d import mesh
 

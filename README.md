@@ -41,6 +41,6 @@ In terminal:
 
 Generated 3D mesh will be saved in a folder called "YOU CREATED", named "Transformed _Shape.npy".
 
-===========
+##
 
 If you have any problem, contact me ^_^.
